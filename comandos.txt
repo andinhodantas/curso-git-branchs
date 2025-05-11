@@ -1,0 +1,25 @@
+Nome:Anderson Nacimento Dantas 
+
+mkdir curso-git-branchs 
+cd curso-git-branchs	
+git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead  
+cd curso-branchs-ifrn-ead  
+git add texto.txt 
+git commit -m "Adicionando texto.txt com a linha original" 
+git checkout -b feature-1  
+echo "linha modificada na feature-1" > texto.txt
+git add texto.txt
+git commit -m “texto.txt modificado para a branch feature-1”
+git checkout main
+echo "linha modificada na main" > texto.txt
+git add texto.txt 
+git commit -m "Alterando o conteudo do arquivo texto.txt na main"
+git merge feature-1
+git add texto.txt
+git commit -m "resolvendo o conflito"
+git checkout -b add-comandos
+git add comandos.txt
+git commit -m "Adicionando o comandos.txt"
+git remote add origin-github https://github.com/andinhodantas/curso-git-branchs.git
+git push -u origin-github main
+git push -u origin-github add-comandos
